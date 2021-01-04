@@ -9,6 +9,11 @@ class PlateController extends Controller
 {
     private $itemsOnPage = 15;
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('plate.index', ['plates' => Plate::paginate($this->itemsOnPage)]);

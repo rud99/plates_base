@@ -14,12 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/plates', [App\Http\Controllers\PlateController::class, 'index'])->name('plates.index');
 Route::get('/plates/{id}/edit', [App\Http\Controllers\PlateController::class, 'edit'])->name('plates.edit');
 Route::put('/plates/{id}', [App\Http\Controllers\PlateController::class, 'update'])->name('plates.update');
