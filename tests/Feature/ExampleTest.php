@@ -11,14 +11,24 @@ class ExampleTest extends TestCase
 {
 //    use RefreshDatabase;
 
-    // доступ к главной странице
+    // доступ к главной странице неавторизованным пользователем
     /** @test */
-    public function main_page_can_see()
+    public function main_page_can_see_unauthorized()
     {
         $response = $this->get('/');
         $response->assertStatus(200);
-        $response->assertSee('Login');
-        $response->assertSee('Register');
+        $response->assertSee('Войти');
+        $response->assertSee('Регистрация');
+    }
+
+    // доступ к главной странице авторизованным пользователем
+    /** @test */
+    public function main_page_can_see_authorized()
+    {
+        $response = $this->actingAs(User::factory()->create())->get('/');
+        $response->assertStatus(200);
+        $response->assertSee('Вы вошли в систему');
+        $response->assertSee('Каталог пластинок');
     }
 
     // просмотр списка пластинок неавторизованным пользователем

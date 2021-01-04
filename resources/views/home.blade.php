@@ -23,7 +23,8 @@
                                     </div>
                                 @endif
 
-                                {{ __('You are logged in!') }}
+                                    {{ __('You are logged in!') }}<br>
+                                    Можно перейти в <a href="{{ route('plates.index') }}">Каталог пластинок</a>
                             </div>
                         </div>
                         @endguest
