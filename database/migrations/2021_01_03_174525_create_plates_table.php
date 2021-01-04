@@ -19,8 +19,8 @@ class CreatePlatesTable extends Migration
             $table->string('album_title')->index();
             $table->integer('duration')->index();
             $table->float('price', 8, 2)->index();
-
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
