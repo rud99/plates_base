@@ -37,7 +37,7 @@ class PlateFactory extends Factory
             'artist_name' => $this->artistNames[rand(0, count($this->artistNames)-1)],
             'album_title' => $this->faker->sentence( 4, true),
             'duration' => $this->faker->numberBetween(3, 90),
-            'price' => $this->faker->randomFloat(2, 1000, 3000)
+            'price' => $this->faker->randomFloat(2, 300, 2000)
         ];
     }
 }
