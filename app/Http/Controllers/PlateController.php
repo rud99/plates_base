@@ -26,6 +26,13 @@ class PlateController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'artist_name' => 'required',
+            'album_title' => 'required',
+            'duration' => 'required|numeric|min:1',
+            'price' => 'required|numeric|min:0.1'
+        ]);
+
         $plate = Plate::findOrFail($id);
         $plate->fill($request->all())->save();
 
