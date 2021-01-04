@@ -36,4 +36,5 @@
 5. php artisan migrate --seed
 6. php artisan cache:clear
 7. php artisan config:clear
-8. Выполняем тесты php artisan test
+8. Присваиваем корректные права (согласно настройкам Вашей системы)
+9. Выполняем тесты php artisan test
