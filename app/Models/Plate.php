@@ -13,4 +13,10 @@ class Plate extends Model
 
     protected $dates = ['deleted_at'];
 
+    protected $fillable = [
+        'artist_name',
+        'album_title',
+        'duration',
+        'price'
+    ];
 }

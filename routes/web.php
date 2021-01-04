@@ -20,4 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/plates', [App\Http\Controllers\PlateController::class, 'index'])->name('plates');
+Route::get('/plates', [App\Http\Controllers\PlateController::class, 'index'])->name('plates.index');
+Route::get('/plates/{id}/edit', [App\Http\Controllers\PlateController::class, 'edit'])->name('plates.edit');
+Route::put('/plates/{id}', [App\Http\Controllers\PlateController::class, 'update'])->name('plates.update');
+Route::delete('/plates/{id}', [App\Http\Controllers\PlateController::class, 'destroy'])->name('plates.destroy');
